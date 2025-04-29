@@ -1,6 +1,8 @@
-// create an array of books
-
 // constructor for books - use classes Book()
+import { book } from "./book.js";
+
+// create an array of books
+const books = [];
 
 // addBookToLibrary()
 // - [ ] use unique id's with `crypto.randomUUID()`
