@@ -1,11 +1,7 @@
-// constructor for books - use classes Book()
-import { book } from "./book.js";
+import * as helpers from "./helpers.js"
 
 // create an array of books
-const books = [];
-
-// addBookToLibrary()
-// - [ ] use unique id's with `crypto.randomUUID()`
+const myLibrary = [];
 
 // function that loops through the array and displays each book on the page
 
@@ -24,3 +20,12 @@ const books = [];
 
 // Add a button on each book’s display to change its `read` status
 // - [ ] To facilitate this you will want to create Book prototype function that toggles a book instance’s read status... figure out how to do this with classes
+
+const bookDeetz = {
+   title: "some shit book",
+   author: "some fuck",
+   numPages: 123,
+   wasRead: true
+};
+helpers.addBookToLibrary(bookDeetz, myLibrary);
+console.log({myLibrary});
