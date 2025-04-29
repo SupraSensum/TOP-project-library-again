@@ -1,5 +1,5 @@
 // constructor for books - use classes Book()
-export class book {
+export class Book {
    constructor(
       author,
       title,
