@@ -1,9 +1,11 @@
-import * as helpers from "./helpers.js"
+import * as helpers from "./backend/helpers.js"
+import * as debugHelpers from "./backend/debugHelpers.js";
 
 // create an array of books
 const myLibrary = [];
 
 // function that loops through the array and displays each book on the page
+debugHelpers.addSomeBooksToLib(5, myLibrary);
 
 // add a "New Book" button
 // - [ ] author
@@ -20,12 +22,3 @@ const myLibrary = [];
 
 // Add a button on each book’s display to change its `read` status
 // - [ ] To facilitate this you will want to create Book prototype function that toggles a book instance’s read status... figure out how to do this with classes
-
-const bookDeetz = {
-   title: "some shit book",
-   author: "some fuck",
-   numPages: 123,
-   wasRead: true
-};
-helpers.addBookToLibrary(bookDeetz, myLibrary);
-console.log({myLibrary});
