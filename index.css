@@ -1,0 +1,102 @@
+/* Basic CSS Reset */
+
+/* Remove margin and padding from all elements */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Remove text decoration from links */
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+/* Set default font family and size */
+body {
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+   line-height: 1.5;
+}
+
+/* Remove list styles */
+ul,
+ol {
+   list-style: none;
+}
+
+/* Remove border on fieldsets and buttons */
+fieldset,
+button {
+   border: none;
+   padding: 0;
+   margin: 0;
+}
+
+/* Reset table borders and spacing */
+table {
+   border-collapse: collapse;
+   width: 100%;
+}
+
+th,
+td {
+   padding: 0;
+   text-align: left;
+}
+
+/* Ensure form elements are styled consistently */
+input,
+textarea,
+select,
+button {
+   font-family: inherit;
+   font-size: inherit;
+   border: 1px solid #ccc;
+}
+
+/* Custom CSS */
+
+body {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 20px;
+}
+
+#title, #library, footer {
+   outline: 3px solid blue;
+}
+
+#title {
+   height: 100px;
+}
+
+#library {
+   flex: 1 1 auto;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   padding: 20px;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+footer {
+   height: 50px;
+}
+
+#title, footer {
+   flex-shrink: 0;
+}
+
+.book {
+   outline: 2px solid red;
+   padding: 10px;
+   width: 180px;
+   height: 250px;
+}

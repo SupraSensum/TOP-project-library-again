@@ -1,11 +1,16 @@
 import * as helpers from "./backend/helpers.js"
 import * as debugHelpers from "./backend/debugHelpers.js";
+import addBookToLibrary from "./frontend/addBookToLibrary.js";
 
 // create an array of books
 const myLibrary = [];
 
 // function that loops through the array and displays each book on the page
-debugHelpers.addSomeBooksToLib(5, myLibrary);
+debugHelpers.addSomeBooksToLib(500, myLibrary);
+
+myLibrary.forEach(book => {
+   addBookToLibrary(book);
+})
 
 // add a "New Book" button
 // - [ ] author

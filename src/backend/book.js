@@ -1,16 +1,10 @@
 // constructor for books - use classes Book()
 export class Book {
-   constructor(
-      author,
-      title,
-      numPages,
-      wasRead,
-      uuid
-   ) {
-      this.author = author;
-      this.title = title;
-      this.numPages = numPages;
-      this.wasRead = wasRead;
-      this.uuid = uuid;
+   constructor(bookDeetz) {
+      this.author = bookDeetz.author;
+      this.title = bookDeetz.title;
+      this.numPages = bookDeetz.numPages;
+      this.wasRead = bookDeetz.wasRead;
+      this.uuid = bookDeetz.uuid;
    }
 }
