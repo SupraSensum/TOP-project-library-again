@@ -22,6 +22,31 @@ myLibrary.forEach(book => {
 // - [ ] Explore dialogs and modals using the <dialog> tag: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 // - [ ] use event.preventDefault(); to prevent `submit` input from trying to send data to server
 
+const newBookButton = document.querySelector("#openNewBook");
+const newBookDialog = document.querySelector("#newBookDialog");
+const newBookCancel = document.querySelector("#cancelNewBook");
+const newBookForm = document.querySelector("#newBookDialog form");
+newBookButton.addEventListener('click', () => newBookDialog.showModal());
+newBookCancel.addEventListener('click', () => newBookDialog.close());
+newBookForm.addEventListener('submit', e => {
+   e.preventDefault();
+   newBookDialog.close('confirm');
+});
+newBookDialog.addEventListener('close', () => {
+   if (newBookDialog.returnValue != 'confirm') return;
+
+   const raw = Object.fromEntries(new FormData(newBookForm));
+
+   const book = {
+      title: raw.title,
+      author: raw.author,
+      numPages: Number(raw.pages),
+      wasRead: newBookForm.elements.read.checked
+   };
+
+   console.log({book});
+});
+
 // Add button on each book to remove from library
 // - [ ] will need to associate DOM elements with actual book objects somehow. One option is `data-attribute` corresponding to the unique `id`
 

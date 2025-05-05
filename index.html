@@ -10,8 +10,35 @@
    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-   <h1 id="title"></h1>
+   <h1 id="title">
+      <button id="openNewBook">New Book</button>
+   </h1>
    <div id="library"></div>
    <footer></footer>
+   <dialog id="newBookDialog">
+      <h2>Create New Book</h2>
+      <form method="dialog" class="book-form">
+         <label>
+            Title
+            <input name="title" type="text" required>
+         </label>
+         <label>
+            Author
+            <input name="author" type="text" required>
+         </label>
+         <label>
+            Pages
+            <input name="pages" type="number" min="1" required>
+         </label>
+         <label class="toggle">
+            <input name="read" type="checkbox">
+            <span>Read?</span>
+         </label>
+         <div class="actions">
+            <button type="button" id="cancelNewBook">Cancel</button>
+            <button type="submit" value="confirm">Create</button>
+         </div>
+      </form>
+   </dialog>
 </body>
 </html>
