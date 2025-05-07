@@ -1,4 +1,4 @@
-export default function addBookToLibrary(bookDeetz) {
+export default function displayBookInLibrary(bookDeetz) {
    const bookContainer = document.createElement('div');
    const titleContainer = document.createElement('h2');
    const authorContainer = document.createElement('p');
