@@ -3,6 +3,7 @@ import * as debugHelpers from "./backend/debugHelpers.js";
 import displayBookInLibrary from "./frontend/displayBookInLibrary.js";
 import initNewBookDialog from "./frontend/initNewBookDialog.js";
 import refreshLibraryUI from "./frontend/refreshLibraryUI.js";
+import initRemoveBookButton from "./frontend/initRemoveBookButton.js";
 
 // create an array of books
 const myLibrary = [];
@@ -27,6 +28,10 @@ initNewBookDialog(onNewBook);
 
 // Add button on each book to remove from library
 // - [ ] will need to associate DOM elements with actual book objects somehow. One option is `data-attribute` corresponding to the unique `id`
+// 
+// Let's think through how this needs to work
+// - during creation of book, add a step where the remove book element is attached
+initRemoveBookButton(onRemoveBook);
 
 // Add a button on each book’s display to change its `read` status
 // - [ ] To facilitate this you will want to create Book prototype function that toggles a book instance’s read status... figure out how to do this with classes
@@ -36,5 +41,11 @@ function onNewBook(book) {
    helpers.storeBookInLibrary(book, myLibrary);
 
    // update frontend
+   refreshLibraryUI(myLibrary);
+}
+
+function onRemoveBook(uuid) {
+   helpers.removeBookFromLibrary(uuid, myLibrary);
+
    refreshLibraryUI(myLibrary);
 }

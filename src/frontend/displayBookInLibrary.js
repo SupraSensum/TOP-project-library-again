@@ -4,6 +4,7 @@ export default function displayBookInLibrary(bookDeetz) {
    const authorContainer = document.createElement('p');
    const pageNumContainer = document.createElement('p');
    const readStateContainer = document.createElement('div');
+   const removeButton = document.createElement('button');
 
    bookContainer.classList.add("book");
    bookContainer.dataset.uuid = bookDeetz.uuid;
@@ -11,13 +12,16 @@ export default function displayBookInLibrary(bookDeetz) {
       titleContainer,
       authorContainer,
       pageNumContainer,
-      readStateContainer
+      readStateContainer,
+      removeButton
    );
 
    titleContainer.textContent = bookDeetz.title;
    authorContainer.textContent = bookDeetz.author;
    pageNumContainer.textContent = bookDeetz.numPages;
    readStateContainer.textContent = bookDeetz.wasRead;
+   removeButton.textContent = 'X';
+   removeButton.classList.add('removeBookButton');
 
    document.querySelector("#library").appendChild(bookContainer);
 }
