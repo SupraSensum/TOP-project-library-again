@@ -3,7 +3,7 @@ export default function displayBookInLibrary(bookDeetz) {
    const titleContainer = document.createElement('h2');
    const authorContainer = document.createElement('p');
    const pageNumContainer = document.createElement('p');
-   const readStateContainer = document.createElement('div');
+   const readStateButton = document.createElement('button');
    const removeButton = document.createElement('button');
 
    bookContainer.classList.add("book");
@@ -12,16 +12,17 @@ export default function displayBookInLibrary(bookDeetz) {
       titleContainer,
       authorContainer,
       pageNumContainer,
-      readStateContainer,
+      readStateButton,
       removeButton
    );
 
    titleContainer.textContent = bookDeetz.title;
    authorContainer.textContent = bookDeetz.author;
    pageNumContainer.textContent = bookDeetz.numPages;
-   readStateContainer.textContent = bookDeetz.wasRead;
+   readStateButton.textContent = bookDeetz.wasRead;
    removeButton.textContent = 'X';
    removeButton.classList.add('removeBookButton');
+   readStateButton.classList.add('readStateButton');
 
    document.querySelector("#library").appendChild(bookContainer);
 }

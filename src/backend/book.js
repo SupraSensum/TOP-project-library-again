@@ -7,4 +7,8 @@ export class Book {
       this.wasRead = bookDeetz.wasRead;
       this.uuid = bookDeetz.uuid;
    }
+
+   toggleReadStatus() {
+      this.wasRead === true ? this.wasRead = false : this.wasRead = true;
+   }
 }
